@@ -20,7 +20,10 @@
   },
   "scripts": {
     "dev": "bun --watch run dev.tsx",
-    "build": "bun build src/index.tsx --outdir ./build"
+    "build": "bun build src/index.tsx --outdir ./build",
+    "docker:start": "bun docker:build && bun docker:run",
+    "docker:build": "docker build --pull -t rusty-buns .",
+    "docker:run": "docker run -dp 3000:3000 rusty-buns"
   },
   "bun-create": {
     "start": "bun run dev"
